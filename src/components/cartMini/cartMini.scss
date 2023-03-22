@@ -1,0 +1,13 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+
+.cart-mini {
+  @include mini-close(right, 100%);
+  overflow-y: hidden;
+}
+.cart-mini-openned {
+  @include mini-open;
+}
+.mini-header-title-shadow {
+  box-shadow: 0 0px 10px 6px rgba(129, 129, 129, 0.2);
+}

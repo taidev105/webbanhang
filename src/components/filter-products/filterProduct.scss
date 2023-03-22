@@ -1,0 +1,186 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+
+.filter-and-product-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  color: $lightLetterColor;
+  svg {
+    margin-right: 2px;
+    @include font-size-weight(2.5rem, 400);
+    @include transform(translateY(3px));
+  }
+  span {
+    @include font-size-weight(1.5rem, 400);
+  }
+  @include transition(all 0.3s);
+  &:hover {
+    color: $hoverColor;
+    cursor: pointer;
+  }
+}
+.product-view {
+  display: flex;
+  align-items: center;
+  padding-left: 130px;
+  .product-view-btn {
+    margin: 0 5px;
+    &.column3 {
+      &.active {
+        border: 1px solid $letterColor;
+        &::before {
+          background-color: $letterColor;
+        }
+        &::before {
+          box-shadow: 13px 0 0 $letterColor, 26px 0 0 $letterColor;
+        }
+      }
+      height: 26px;
+      width: 42px;
+      &::before {
+        box-shadow: 13px 0 0 $lightLetterColor, 26px 0 0 $lightLetterColor;
+      }
+      &:hover {
+        &::before {
+          box-shadow: 13px 0 0 $letterColor, 26px 0 0 $letterColor;
+        }
+      }
+    }
+    &.column4 {
+      &.active {
+        border: 1px solid $letterColor;
+        &::before {
+          background-color: $letterColor;
+        }
+        &::before {
+          box-shadow: 13px 0 0 $letterColor, 26px 0 0 $letterColor,
+            39px 0 0 $letterColor;
+        }
+      }
+      height: 26px;
+      width: 55px;
+      &::before {
+        box-shadow: 13px 0 0 $lightLetterColor, 26px 0 0 $lightLetterColor,
+          39px 0 0 $lightLetterColor;
+      }
+      &:hover {
+        &::before {
+          box-shadow: 13px 0 0 $letterColor, 26px 0 0 $letterColor,
+            39px 0 0 $letterColor;
+        }
+      }
+    }
+    &.column2 {
+      &.active {
+        border: 1px solid $letterColor;
+        &::before {
+          background-color: $letterColor;
+        }
+        &::before {
+          box-shadow: 13px 0 0 $letterColor;
+        }
+      }
+      height: 26px;
+      width: 29px;
+      &::before {
+        box-shadow: 13px 0 0 $lightLetterColor;
+      }
+      &:hover {
+        &::before {
+          box-shadow: 13px 0 0 $letterColor;
+        }
+      }
+    }
+    border: 1px solid $lightLetterColor;
+    position: relative;
+    @include transition(all 0.5s);
+    &::before {
+      content: '';
+      background-color: $lightLetterColor;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      @include transition(all 0.5s);
+      height: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $letterColor;
+      &::before {
+        background-color: $letterColor;
+      }
+    }
+  }
+}
+
+.sort-btn-wrapper {
+  .filter-btn {
+    display: none;
+  }
+  select {
+    width: 190px;
+    height: 40px;
+    color: $lightLetterColor;
+    font-size: 1.6rem;
+    outline: none;
+    padding: 0 30px 0 15px;
+    border-radius: 20px;
+    border: $borderColor;
+    background-color: $whiteColor;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 960px) {
+  .product-view {
+    padding-left: 0px;
+  }
+  .wrapper-filter {
+    display: none;
+  }
+  .filter-and-product-header {
+    .sort-btn-wrapper {
+      .filter-btn {
+        display: block;
+      }
+      select {
+        display: none;
+      }
+    }
+  }
+}
+.no-match-product {
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+  span {
+    color: $hoverColor;
+    &:hover {
+      cursor: pointer;
+      color: darken($hoverColor, 30%);
+    }
+  }
+}
+@media (min-width: 960.999px) {
+  .filter-and-product-header {
+    .filter-btn {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .product-view {
+    .product-view-btn {
+      &.column4 {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+
+.search-mini {
+  @include mini-close(right, 100%);
+}
+.search-mini-openned {
+  @include mini-open;
+}
+.mini-header-title {
+  padding: 5px 0 5px 20px;
+  border-bottom: $borderBottomColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-weight: 480;
+    font-size: 1.7rem;
+  }
+}
+.search-header {
+  padding: 30px 20px;
+  border-bottom: $borderBottomColor;
+  .cat-search {
+    @include animationTransform(0.3s);
+    margin-bottom: 20px;
+    select {
+      width: 100%;
+      height: 40px;
+      color: $letterColor;
+      font-size: 1.6rem;
+      outline: none;
+      padding: 0 30px 0 15px;
+      border-radius: 20px;
+      border: $borderColor;
+      background-color: $whiteColor;
+    }
+  }
+  .input-search {
+    @include animationTransform(0.5s);
+    position: relative;
+    input {
+      border-radius: 20px;
+      outline: none;
+      border: $borderColor;
+      padding: 0 30px 0 15px;
+      max-width: 100%;
+      width: 100%;
+      height: 40px;
+      border: $borderColor;
+      font-size: 1.5rem;
+      &::placeholder {
+        color: $letterColor;
+      }
+    }
+    .input-submit-btn {
+      top: 0;
+      bottom: 0;
+      right: 2px;
+      width: 55px;
+      border-radius: 40px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      position: absolute;
+      @include transition(all 0.3s ease-in-out);
+      padding: 0;
+      svg {
+        font-size: 2.3rem;
+      }
+      &:hover {
+        background-color: $hoverColor;
+        cursor: pointer;
+        svg {
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+}
+.result-header {
+  padding: 10px 20px;
+  border-bottom: $borderBottomColor;
+  box-shadow: 0 3px 10px 0 rgba(129, 129, 129, 0.2);
+  span {
+    font-size: 1.5rem;
+    font-weight: 480;
+    line-height: 2rem;
+  }
+}
+.mini-search-alert-empty {
+  text-align: center;
+  @include font-size-weight(3rem, 400);
+  color: $lightLetterColor;
+}
+.wraper-result-content {
+  flex: 1 1 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  @include scroll-bar(12px);
+  .result-content {
+    @include animationTransform(0.6s);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 20px;
+    .result-list {
+      overflow: auto;
+      overflow-x: hidden;
+      padding: 0;
+      .result-list__item {
+        &.hidden {
+          @include transform(scale(0));
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+        }
+        @include transition(all 0.3s);
+        list-style: none;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: $borderBottomColor;
+        a {
+          text-decoration: none;
+          display: block;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          @include transition(all 0.3s);
+          img {
+            width: 95px;
+            height: 95px;
+            @include transition(all 0.3s);
+          }
+          .product-title {
+            flex: 1 1 auto;
+            padding: 0 10px;
+            flex-direction: column;
+            color: $letterColor;
+            .product-name {
+              display: block;
+              font-size: 1.5rem;
+              font-weight: 500;
+              margin-bottom: 10px;
+              @include transition(all 0.3s);
+            }
+            .price-title {
+              &.none-decoration {
+                del {
+                  text-decoration: none;
+                }
+              }
+              color: $lightLetterColor;
+              display: flex;
+              flex-basis: 0;
+              max-width: 100%;
+              flex-grow: 1;
+              align-items: baseline;
+              .price {
+                font-size: 1.5rem;
+              }
+              del {
+                font-size: 1.5rem;
+                padding-right: 4px;
+                display: block;
+              }
+              ins {
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: red;
+                display: block;
+                margin-right: 4px;
+              }
+              .onsale-label {
+                display: inline-block;
+                padding: 3px 5px;
+                display: block;
+                font-size: 1.2rem;
+                color: $whiteColor;
+                background-color: #ff4e00;
+                border-radius: 2px;
+              }
+            }
+          }
+          &:hover .product-name {
+            color: $hoverColor;
+          }
+          &:hover {
+            transform: translateX(10px);
+            background-color: #e3e3e3;
+          }
+        }
+      }
+    }
+  }
+}

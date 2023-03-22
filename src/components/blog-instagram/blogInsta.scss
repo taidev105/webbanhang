@@ -1,0 +1,91 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/animations.scss';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+//image blog
+
+.slide-blog-container {
+  margin-top: 20px;
+}
+.blog-slide {
+  &.padding {
+    padding: 15px;
+  }
+  outline: none;
+  & > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    .img-blog {
+      padding-top: 73%;
+      // @include background-img;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0px -50px;
+      @include transition(transform 1.25s cubic-bezier(0, 0, 0.44, 1.18));
+      &:before {
+        content: '';
+        width: 2px;
+        height: 1px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.411);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+      }
+    }
+  }
+  &:hover .img-blog {
+    @include transform(scale(1.1));
+  }
+  &:hover .img-blog::before {
+    @include animation(fadeIn 0.5s ease-in-out);
+  }
+}
+//info and content
+.post-info {
+  margin-bottom: 15px;
+  .post-title {
+    a {
+      text-decoration: none;
+      color: $letterColor;
+      @include font-size-weight(1.57rem, 500);
+    }
+    margin-bottom: 5px;
+  }
+  .bold {
+    @include font-size-weight(1.45rem, 450);
+    color: $letterColor;
+  }
+  .post-author,
+  .post-time {
+    color: $lightLetterColor;
+    margin-right: 4px;
+    @include font-size-weight(1.45rem, 450);
+  }
+}
+.post-content {
+  @include font-size-weight(1.45rem, 400);
+  color: $lightLetterColor;
+  line-height: 1.7;
+}
+
+.slide-blog-container {
+  .slick-slider {
+    .next-arrow,
+    .prev-arrow {
+      top: 30%;
+    }
+  }
+}
+@media (max-width: 960px) {
+  .blog-slide {
+    &.padding {
+      padding: 5px;
+    }
+  }
+}
+//instagram

@@ -1,0 +1,85 @@
+@import '../../sassStyles/mixin.scss';
+.insta-section {
+  &.margin {
+    margin-top: 80px;
+  }
+}
+.blog-slide {
+  &.position {
+    position: relative;
+    a {
+      margin: 0;
+    }
+  }
+}
+.blog-page-post-info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 110px;
+  background-color: rgba(0, 0, 0, 0.768);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $whiteColor;
+  text-align: center;
+  .post-author {
+    margin-bottom: 5px;
+    @include font-size-weight(1.3rem, 500);
+  }
+  .post-title {
+    @include font-size-weight(1.9rem, 450);
+    a {
+      text-decoration: none;
+      color: $whiteColor;
+    }
+    margin-bottom: 8px;
+  }
+  .post-time {
+    @include font-size-weight(1.6rem, 400);
+  }
+  .bold {
+    color: rgba(184, 184, 184, 0.652);
+  }
+}
+.section-container {
+  .section-content-wrapper {
+    &.center {
+      display: flex;
+      justify-content: center;
+      &.bottom {
+        border-top: $borderColordark;
+      }
+      padding-top: 40px;
+      &.margin {
+        margin-bottom: 150px;
+      }
+      button {
+        outline: none;
+        border: none;
+        margin: 0 10px;
+        background-color: $whiteColor;
+        @include font-size-weight(1.7rem, 300);
+        @include transition(color 0.3s);
+        color: darken($lightLetterColor, 30%);
+        &:hover {
+          cursor: pointer;
+          color: red;
+        }
+      }
+      .pagination-btn {
+        &.none {
+          display: none;
+        }
+      }
+      .number-pagination-btn {
+        &.actived {
+          color: red;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

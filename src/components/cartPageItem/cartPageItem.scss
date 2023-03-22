@@ -1,0 +1,67 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+//PRODUCT
+.sc-item__img {
+  width: 120px;
+  .sc-item-img__img {
+    padding-top: 130%;
+    @include background-img;
+  }
+}
+.sc-item__info {
+  margin-left: 20px;
+  .sc-item__info__name {
+    text-decoration: none;
+    color: $letterColor;
+    @include font-size-weight(1.3rem, 600);
+    margin-bottom: 5px;
+    display: block;
+  }
+  .sc-item__color-size {
+    .sc__meta__color,
+    .sc__meta__size {
+      color: $lightLetterColor;
+      @include font-size-weight(1.3rem, 400);
+      span {
+        color: darken($lightLetterColor, 10%);
+        @include font-size-weight(1.3rem, 500);
+      }
+    }
+    margin-bottom: 12px;
+  }
+  .wrapper-btn-mini-cart {
+    margin-left: -6px;
+  }
+}
+
+//price
+.sc-item__meta {
+  .sc-item__meta__price {
+    @include font-size-weight(1.4rem, 500);
+    color: $lightLetterColor;
+    ins {
+      color: red;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+  }
+}
+//price
+.sc-item__price-total {
+  @include font-size-weight(1.4rem, 500);
+  color: $letterColor;
+}
+@media (max-width: 600px) {
+  .sc-item {
+    padding: 10px 0;
+  }
+  .shopping-cart-content {
+    .sc-content-clear__btn {
+      padding: 8px 25px;
+    }
+  }
+  .sc-item__price-total {
+    @include font-size-weight(1.6rem, 600);
+    color: $letterColor;
+  }
+}

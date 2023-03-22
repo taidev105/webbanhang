@@ -1,0 +1,77 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+.page-hero-section {
+  background-color: #f6f6f8;
+  padding: 20px 0;
+  margin-top: 70px;
+}
+.page-hero-container {
+  padding: 0 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-hero-link-wrapper {
+  display: flex;
+  align-items: center;
+  .hero-link {
+    text-decoration: none;
+    color: $letterColor;
+    @include font-size-weight(1.3rem, 400);
+    @include transition(all 0.3s);
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+  .hero-product-name {
+    @include font-size-weight(1.3rem, 400);
+    color: $lightLetterColor;
+  }
+  svg {
+    margin: 0 2px;
+    color: $lightLetterColor;
+    font-size: 1.5rem;
+  }
+}
+.icon-back-wrapper {
+  a {
+    color: $letterColor;
+  }
+  display: flex;
+  align-items: center;
+  position: relative;
+  .hover-text {
+    @include hoverText;
+    // opacity: 1;
+    // visibility: visible;
+    pointer-events: none;
+    top: 150%;
+    right: 50%;
+    @include transform(translateY(50%));
+    &:after {
+      bottom: 102%;
+      right: 5%;
+      border-color: transparent transparent#383838 transparent;
+    }
+  }
+  svg {
+    @include transition(color 0.2s);
+    font-size: 2rem;
+  }
+  &:hover {
+    cursor: pointer;
+    svg {
+      color: $hoverColor;
+    }
+  }
+  &:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+    @include transform(translateY(0));
+  }
+}
+@media (max-width: 1025px) {
+  .page-hero-container {
+    padding: 0 25px;
+  }
+}

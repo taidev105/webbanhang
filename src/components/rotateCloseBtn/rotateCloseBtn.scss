@@ -1,0 +1,38 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+
+.wrap-btn-rotate {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn-rotate {
+    outline: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    .line-1 {
+      height: 24px;
+      width: 2px;
+      margin-left: 12px;
+      background-color: lighten($letterColor, 20%);
+      transform: rotate(45deg);
+      @include transition(transform 0.4s);
+      .line-2 {
+        height: 100%;
+        width: 100%;
+        background-color: lighten($letterColor, 20%);
+        transform: rotate(90deg);
+      }
+    }
+
+    &:hover .line-1 {
+      transform: rotate(225deg);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

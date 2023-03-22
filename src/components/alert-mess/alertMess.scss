@@ -1,0 +1,44 @@
+@import '../../sassStyles/mixin.scss';
+.alert-mess {
+  &.hidden {
+    opacity: 1;
+    visibility: visible;
+    left: 10px;
+    @include transform(scale(1));
+  }
+  @include transform(scale(0));
+  min-width: 200px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all 0.4s);
+  position: fixed;
+  bottom: 100px;
+  z-index: 102;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px;
+  left: -150px;
+  padding: 0 10px;
+  span {
+    @include font-size-weight(1.5rem, 500);
+    color: $whiteColor;
+    strong {
+      @include font-size-weight(1.7rem, 600);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .alert-mess {
+    padding: 5px 10px;
+    span {
+      @include font-size-weight(1rem, 400);
+      color: $whiteColor;
+      strong {
+        @include font-size-weight(1.2rem, 600);
+      }
+    }
+  }
+}

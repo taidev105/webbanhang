@@ -1,0 +1,51 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+.single-product-section {
+  .section-container {
+    padding: 5px;
+  }
+}
+////img and zoom////
+.single-product-thumbnails-list {
+  margin: 0 -5px;
+  .single-product-thumbnails {
+    margin: 10px 0;
+    .single-product-thumbnails__img {
+      @include transition(all 0.7s);
+      &.nopointer {
+        pointer-events: none;
+      }
+      &.active {
+        filter: opacity(100%);
+        background-position: bottom;
+      }
+      background-repeat: no-repeat;
+      background-size: 107% 107%;
+      padding-top: 100%;
+      background-position: top;
+      margin: 0 5px;
+      &:hover {
+        background-position: bottom;
+        cursor: pointer;
+        filter: opacity(100%);
+      }
+      filter: opacity(30%);
+    }
+  }
+  .prev-arrow,
+  .next-arrow {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    visibility: hidden;
+    @include transform(translateY(-50%) scale(0.3));
+  }
+  &:hover {
+    .prev-arrow,
+    .next-arrow {
+      opacity: 1;
+      visibility: visible;
+      @include transform(translateY(-50%) scale(1));
+    }
+  }
+}

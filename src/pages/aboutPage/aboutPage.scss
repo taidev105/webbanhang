@@ -1,0 +1,216 @@
+@import '../../sassStyles/mixin.scss';
+.video-container {
+  width: 100%;
+  margin-top: 75px;
+  position: relative;
+  .video__overlay {
+    background: linear-gradient(#0009, #0009);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    h2 {
+      margin-top: 0;
+      @include font-size-weight(7rem, 600);
+      color: rgba(255, 255, 255, 0.829);
+      margin-bottom: 30px;
+    }
+    span {
+      text-align: center;
+      @include font-size-weight(2rem, 600);
+      color: rgba(255, 255, 255, 0.829);
+    }
+  }
+  .about-us-inner-loadding {
+    width: 100%;
+    height: 28vw;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}
+.about-us-content {
+  overflow: hidden;
+  outline: none;
+  width: 100%;
+  .about-us-img {
+    @include transition(transform 3s);
+    width: 100%;
+    padding-top: 100%;
+    @include background-img;
+  }
+}
+.about-us__content {
+  .section-title-container {
+    margin: 100px 0 50px 0;
+    h3 {
+      span {
+        @include font-size-weight(4rem, 600);
+      }
+    }
+  }
+  .about-us__img {
+    padding-top: 100%;
+    @include background-img;
+  }
+  .about-us__content__title {
+    padding: 25%;
+    h3 {
+      @include font-size-weight(3rem, 700);
+      font-style: italic;
+      color: darken($lightLetterColor, 20%);
+      margin-bottom: 10px;
+    }
+    p {
+      @include font-size-weight(1.2rem, 400);
+      color: black;
+      margin-left: 3px;
+    }
+  }
+}
+.about-us-title {
+  text-align: center;
+  @include font-size-weight(4rem, 700);
+  margin-top: 100px;
+}
+.Featured-content {
+  position: relative;
+  margin-bottom: 200px;
+  .Featured-content__img {
+    width: 55%;
+    img {
+      width: 100%;
+    }
+    .Featured-content__content {
+      width: 55%;
+      height: 100%;
+      position: absolute;
+      top: 40px;
+      right: 0%;
+      padding: 72px 64px 64px;
+      background-color: $whiteColor;
+      box-shadow: 0 5px 56px 0 rgba(34, 29, 31, 0.12);
+      @include transition(all 1s);
+      h3 {
+        @include font-size-weight(2.4rem, 500);
+        margin-bottom: 30px;
+      }
+      p {
+        @include font-size-weight(1.7rem, 300);
+        line-height: 1.7;
+      }
+      .Featured-content__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include font-size-weight(1.5rem, 700);
+        color: $whiteColor;
+        background-color: $letterColor;
+        padding: 8px 15px;
+        @include transform(translate(-50%, -50%));
+      }
+
+      text-overflow: ellipsis;
+    }
+  }
+  &:hover {
+    .Featured-content__content {
+      box-shadow: 0 5px 56px 0 rgba(34, 29, 31, 0.4);
+      right: 5%;
+    }
+  }
+}
+.Featured-content__title {
+  @include font-size-weight(4rem, 600);
+  margin: 150px 0 60px 0;
+  color: $letterColor;
+}
+@media (max-width: 960px) {
+  .about-us__content {
+    .about-us__content__title {
+      padding: 10%;
+    }
+  }
+  .Featured-content {
+    margin-bottom: 100px;
+    .Featured-content__img {
+      .Featured-content__content {
+        right: 10%;
+        padding: 30px 20px 20px;
+        h3 {
+          @include font-size-weight(1.4rem, 500);
+          margin-bottom: 10px;
+        }
+        p {
+          @include font-size-weight(0.7rem, 300);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .Featured-content__title {
+    @include font-size-weight(3rem, 600);
+    margin: 70px 0 30px 0;
+  }
+
+  .about-us__content {
+    .section-title-container {
+      margin: 50px 0 25px 0;
+
+      h3 {
+        span {
+          @include font-size-weight(3rem, 600);
+        }
+      }
+    }
+  }
+
+  .video-container {
+    .video__overlay {
+      h2 {
+        @include font-size-weight(4rem, 600);
+        margin-bottom: 5px;
+      }
+      span {
+        @include font-size-weight(1rem, 600);
+      }
+    }
+  }
+  .about-us__content {
+    .about-us__content__title {
+      padding: 5%;
+
+      h3 {
+        @include font-size-weight(2rem, 700);
+        margin-bottom: 5px;
+      }
+      p {
+        @include font-size-weight(0.8rem, 400);
+        line-height: 1.4;
+      }
+    }
+  }
+  .Featured-content {
+    .Featured-content__img {
+      .Featured-content__content {
+        right: 10%;
+        padding: 30px 20px 20px;
+
+        h3 {
+          @include font-size-weight(0.8rem, 500);
+        }
+        p {
+          @include font-size-weight(0.3rem, 300);
+        }
+      }
+    }
+  }
+}

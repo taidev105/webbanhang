@@ -1,0 +1,113 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+.cart-header {
+  margin-top: 60px;
+  span {
+    color: $letterColor;
+    @include font-size-weight(1.2rem, 600);
+  }
+}
+//content
+// .shopping-cart-content {
+.sc-content-clear__btn {
+  float: right;
+  margin-top: 15px;
+  padding: 13px 60px;
+  outline: none;
+  border-radius: 50px;
+  @include font-size-weight(1.6rem, 500);
+  border: 1px solid $letterColor;
+  background-color: transparent;
+  @include transition(all 0.3s);
+  &:hover {
+    cursor: pointer;
+    background-color: $letterColor;
+    color: white;
+  }
+}
+// }
+// check out
+.shopping-cart-footer {
+  margin-top: 150px;
+}
+.sc-checkout {
+  .button_primary {
+    text-decoration: none;
+    text-align: center;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .sc-checkout__sub-total {
+    @include font-size-weight(2rem, 600);
+    margin-bottom: 10px;
+    color: $letterColor;
+    span {
+      margin-left: 20px;
+    }
+  }
+  .sc-checkout__condition {
+    @include font-size-weight(1.3rem, 400);
+    color: $lightLetterColor;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .button_primary {
+    height: 40px;
+    width: 400px;
+    @include font-size-weight(1.5rem, 400);
+    margin-bottom: 0;
+  }
+  .sc-checkout__payment-logo {
+    width: 100%;
+  }
+}
+//empty cart
+.shopping-cart--empty {
+  margin: 200px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    @include font-size-weight(10rem, 400);
+    color: $lightLetterColor;
+  }
+  h4 {
+    margin: 20px 0;
+    @include font-size-weight(4rem, 500);
+    color: $letterColor;
+  }
+  p {
+    text-align: center;
+    @include font-size-weight(1.5rem, 400);
+    color: $lightLetterColor;
+    margin-bottom: 20px;
+  }
+  .link-back-to-shop {
+    @include font-size-weight(1.3rem, 600);
+    text-decoration: none;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .cart-header {
+    display: none;
+  }
+  .shopping-cart-content {
+    .sc-content-clear__btn {
+      padding: 8px 25px;
+      @include font-size-weight(1.3rem, 500);
+    }
+  }
+  .sc-checkout {
+    display: flex;
+    align-items: center;
+  }
+  .sc-checkout {
+    .button_primary {
+      width: 100%;
+    }
+  }
+} ;

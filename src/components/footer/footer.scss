@@ -1,0 +1,365 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+
+.footer-container {
+  padding: 80px 0 30px 0;
+  background-color: $footerBackgroundColor;
+}
+.content-footer {
+  .MuiGrid-root {
+    padding: 5px;
+  }
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  p {
+    color: $lightLetterColor;
+  }
+}
+
+.menu-footer-wrapper {
+  .menu-footer-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .menu-footer-title {
+      &.none {
+        display: none;
+      }
+      pointer-events: none;
+      color: $letterColor;
+      @include font-size-weight(1.6rem, 410);
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.menu-footer {
+  margin-bottom: 40px;
+  .menu {
+    margin: 0;
+    padding: 0;
+    .item {
+      margin-bottom: 14px;
+      list-style: none;
+      a {
+        @include font-size-weight(1.5rem, 400);
+        color: $lightLetterColor;
+        text-decoration: none;
+        line-height: 1.25;
+        @include transition(color 0.3s);
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 20px 0 10px 0;
+  }
+
+  .menu-footer-wrapper {
+    padding: 5px 0;
+    .footer-contact {
+      margin-bottom: 0;
+      .footer-logo {
+        img {
+          @include transform(translateX(-15px));
+        }
+      }
+    }
+    .menu-footer-title-wrapper {
+      margin-bottom: 8px;
+      .menu-footer-title {
+        &.none {
+          display: block;
+        }
+        margin-bottom: 5px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    /////btn plus and mimus
+    .footer-btn-wrapper {
+      margin-right: 10px;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .footer-btn {
+        outline: none;
+        border: none;
+        width: 14px;
+        height: 14px;
+        padding: 0;
+        .line-1 {
+          height: 14px;
+          width: 2px;
+          margin-left: 12px;
+          background-color: lighten($letterColor, 20%);
+          @include transition(transform 0.35s ease-in-out);
+          .line-2 {
+            height: 100%;
+            width: 100%;
+            @include transition(opacity 0.35s ease-in-out);
+            background-color: lighten($letterColor, 20%);
+            @include transform(rotate(90deg));
+          }
+        }
+      }
+    }
+    &.menu-footer-wrapper_open {
+      .footer-btn-wrapper {
+        .line-1 {
+          @include transform(rotate(270deg));
+        }
+        .line-2 {
+          opacity: 0;
+        }
+      }
+      .menu-footer {
+        .menu {
+          height: 180px;
+        }
+      }
+    }
+  }
+  .menu-footer {
+    margin-bottom: 10px;
+    .menu {
+      height: 0;
+      overflow: hidden;
+      @include transition(all 0.35s ease-in-out);
+    }
+  }
+}
+.footer-contact {
+  margin-bottom: 40px;
+  @include font-size-weight(1.6rem, 410);
+  color: $lightLetterColor;
+  p {
+    display: flex;
+    .icon-item-footer {
+      margin-right: 10px;
+      display: block;
+      svg {
+        text-align: start;
+        font-size: 2.5rem;
+        @include transform(translateY(-2px));
+      }
+    }
+    margin-bottom: 15px;
+    span {
+      @include font-size-weight(1.5rem, 400);
+      display: block;
+      a {
+        color: $lightLetterColor;
+        text-decoration: none;
+        @include transition(color 0.3s);
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+}
+.footer-logo {
+  display: block;
+  img {
+    @include transform(translate(-10px, -10px));
+    height: 40px;
+    width: 150px;
+  }
+}
+
+.social-footer-container {
+  a {
+    svg {
+      font-size: 1.9rem;
+    }
+    color: $lightLetterColor;
+    margin-right: 15px;
+  }
+}
+
+.social-icon {
+  display: inline-block;
+  position: relative;
+  svg {
+    @include transition(all 0.3s);
+  }
+  .text-icon {
+    @include hoverText;
+    bottom: 209%;
+    right: -328%;
+    @include transform(translateY(40%));
+    &:after {
+      top: 100%;
+      left: 50%;
+      @include transform(translateX(-50%));
+      border-color: #383838 transparent transparent transparent;
+    }
+  }
+  &.facebook {
+    &:hover {
+      svg {
+        color: #3b5998;
+      }
+    }
+  }
+  &.linkedin {
+    &:hover {
+      svg {
+        color: #007bb6;
+      }
+    }
+  }
+  &.pinterest {
+    &:hover {
+      svg {
+        color: #cb2027;
+      }
+    }
+  }
+  &.twitter {
+    &:hover {
+      svg {
+        color: #00aced;
+      }
+    }
+  }
+  &.instagram {
+    &:hover {
+      svg {
+        color: #517fa4;
+      }
+    }
+  }
+  &:hover {
+    svg {
+      // color: $hoverColor;
+      @include transform(translateY(-4px));
+    }
+  }
+  &:hover .text-icon {
+    visibility: visible;
+    opacity: 1;
+    @include transform(translateY(0%));
+  }
+}
+
+.input-footer-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+.input-footer {
+  width: 100%;
+  height: 46px;
+  outline: none;
+  border-radius: 40px;
+  border: 1px solid #747474;
+  color: $lightLetterColor;
+  padding: 0 12px;
+  @include font-size-weight(1.3rem, 410);
+  background-color: $footerBackgroundColor;
+}
+.input-footer-btn {
+  position: absolute;
+  border-radius: 40px;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 42px;
+  width: 40%;
+  border: none;
+  background-color: $letterColor;
+  color: $whiteColor;
+  @include font-size-weight(1.4rem, 500);
+  outline: none;
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($letterColor, 5%);
+  }
+}
+.section-footer-bot {
+  .footer-bot-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    .footer-bot-content {
+      .MuiGrid-root {
+        padding: 5px;
+      }
+    }
+  }
+}
+.footer-bot-store-name {
+  padding: 5px 15px;
+  @include font-size-weight(1.4rem, 400);
+  color: $lightLetterColor;
+  span {
+    color: $hoverColor;
+  }
+  a {
+    text-decoration: none;
+    color: $lightLetterColor;
+    @include transition(color 0.3s);
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+.footer-bot-menu {
+  padding: 5px 15px;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  .menu-item {
+    margin-right: 20px;
+    a {
+      text-decoration: none;
+      @include font-size-weight(1.4rem, 400);
+      color: $lightLetterColor;
+      @include transition(color 0.3s);
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .content-footer {
+    .MuiGrid-root {
+      padding: 15px;
+    }
+  }
+  .section-footer-bot {
+    .footer-bot-container {
+      .footer-bot-content {
+        .MuiGrid-root {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 960px) {
+  .menu-footer-wrapper {
+    .menu-footer-title {
+      &.none {
+        display: block;
+      }
+      margin-bottom: 25px;
+    }
+  }
+  .footer-bot-menu {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-bot-store-name {
+    text-align: center;
+  }
+}

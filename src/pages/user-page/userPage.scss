@@ -1,0 +1,75 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+.user__list {
+  position: sticky;
+  top: 30px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  .user__list__item {
+    border: $borderBottomColor;
+    &.nopointer {
+      pointer-events: none;
+      background-color: #f6f6f8;
+    }
+    a {
+      display: inline-block;
+      color: $letterColor;
+      @include transition(all 0.3s);
+      text-decoration: none;
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+    list-style: none;
+    padding: 10px;
+    @include font-size-weight(1.4rem, 300);
+    color: $letterColor;
+    text-align: left;
+    @include transition(all 0.3s);
+    &:hover {
+      color: $hoverColor;
+      cursor: pointer;
+    }
+  }
+}
+.theiaStickySidebar {
+  p {
+    @include font-size-weight(1.7rem, 400);
+    color: $lightLetterColor;
+  }
+  .mt__40 {
+    margin: 30px 0;
+  }
+  button {
+    @include font-size-weight(1.6rem, 400);
+    border: none;
+    @include transition(all 0.3s);
+    background-color: transparent;
+    &:hover {
+      color: $hoverColor;
+      cursor: pointer;
+    }
+  }
+  .table-responsive {
+    table,
+    th,
+    td {
+      border: $borderBottomColor;
+      border-collapse: collapse;
+      padding: 15px;
+      color: $lightLetterColor;
+      @include font-size-weight(1.2rem, 400);
+    }
+    table {
+      width: 100%;
+    }
+  }
+}
+.user__img {
+  img {
+    border-radius: 10px;
+    height: 120px;
+    width: 120px;
+  }
+}

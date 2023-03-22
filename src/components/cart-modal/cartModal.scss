@@ -1,0 +1,118 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+//overlay
+.cart-modal__overlay {
+  position: fixed;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  @include transition(all 0.3s);
+  opacity: 1;
+  visibility: visible;
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+//content
+.cart-modal-section {
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    .cart-modal-container {
+      @include transform(translateY(50%));
+    }
+  }
+  .cart-modal-container {
+    @include transform(translateY(0));
+  }
+  @include transition(all 0.3s);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.cart-modal-container {
+  @include transition(all 0.6s);
+  pointer-events: auto;
+  position: relative;
+  width: 340px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .ctb__info {
+    align-self: start;
+    margin-bottom: 30px;
+    .ctb__info__img {
+      height: 100px;
+      border: $borderBottomColor;
+      width: 90px;
+    }
+    .ctb__info__info_name {
+      @include font-size-weight(1.5rem, 500);
+      color: $letterColor;
+    }
+    .price {
+      @include font-size-weight(1.4rem, 400);
+      color: $lightLetterColor;
+    }
+  }
+  .single-product-size-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .single-product-size-item {
+      margin: 0 5px;
+    }
+    margin-bottom: 20px;
+  }
+  .single-product-color-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    .watch-list-color {
+      margin: 0 10px;
+    }
+  }
+  .add-to-cart-btn-wrapper {
+    width: 100%;
+    .button_primary {
+      height: 40px;
+      margin: 0;
+      @include font-size-weight(1.4rem, 600);
+      &:hover {
+        background-color: $letterColor;
+      }
+    }
+  }
+  .mini-search-footer {
+    padding-top: 0;
+    margin: 20px 0 0 0;
+    border: none;
+  }
+  .wrap-btn-rotate {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .cart-modal-container {
+    .ctb__info {
+      display: flex;
+    }
+  }
+}

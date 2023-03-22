@@ -1,0 +1,88 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+.category-section {
+  border-top: $borderColordark;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  .category-title {
+    display: none;
+  }
+  .category-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    .category-item {
+      .category-item-btn {
+        &.active {
+          color: $hoverColor;
+        }
+        border: none;
+        outline: none;
+        background-color: transparent;
+        @include font-size-weight(1.45rem, 400);
+        padding: 14px 18px;
+        color: lighten($letterColor, 20%);
+        @include transition(color 0.3s);
+        &:hover {
+          color: $hoverColor;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .category-section {
+    &.active {
+      .category-list {
+        height: 0px;
+      }
+      .category-title {
+        svg {
+          @include transform(rotate(-180deg));
+        }
+      }
+    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .category-title {
+      padding: 14px 0;
+      display: flex;
+      box-shadow: 0 3px 10px 0 rgba(129, 129, 129, 0.207);
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      h3 {
+        @include transform(translateX(10px));
+        pointer-events: none;
+        margin-right: 10px;
+        text-align: center;
+        @include font-size-weight(1.6rem, 400);
+        color: lighten($letterColor, 20%);
+      }
+      svg {
+        pointer-events: none;
+        @include transition(all 0.5s);
+        @include transform(rotate(0deg));
+        font-size: 1.9rem;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    @include transition(height 0.5s);
+    .category-list {
+      @include transition(height 0.5s);
+      width: 100%;
+      overflow-y: scroll;
+      flex-direction: column;
+      text-align: center;
+      height: 30vh;
+      @include scroll-bar(2px);
+    }
+  }
+}

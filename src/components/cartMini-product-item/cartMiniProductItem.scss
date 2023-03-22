@@ -1,0 +1,141 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+
+.content-mini-cart {
+  flex: 1 1 auto;
+  position: relative;
+}
+.mini-cart-list-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.mini-cart-list {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  @include scroll-bar(2px);
+  li {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: $borderBottomColor;
+    @include transition(background-color 0.4s);
+    .mini-cart-img {
+      margin-right: 20px;
+      img {
+        width: 120px;
+        height: 150px;
+        @include transition(scale 0.3s);
+      }
+    }
+    &:hover {
+      background-color: lighten($lightLetterColor, 42%);
+    }
+    &:hover img {
+      @include transform(scale(1.01));
+    }
+  }
+  .mini-cart-list__btn {
+    .sc-content-clear__btn {
+      padding: 10px 35px;
+      @include font-size-weight(1.2rem, 500);
+    }
+  }
+}
+// .mini-cart-info-wrapper {
+//   flex: 0 0 auto;
+// }
+.mini-cart-info {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.mini-cart-name-product {
+  width: 100%;
+  @include font-size-weight(1.3rem, 500);
+  text-decoration: none;
+  color: $letterColor;
+  @include transition(color 0.3s);
+  &:hover {
+    color: $hoverColor;
+  }
+}
+.mini-cart-meta {
+  width: 100%;
+  margin-top: 6px;
+  color: $lightLetterColor;
+  .mini-cart-meta-color {
+    @include font-size-weight(1.3rem, 400);
+    margin-bottom: 6px;
+  }
+  .mini-cart-meta-price {
+    @include font-size-weight(1.4rem, 500);
+    margin-bottom: 10px;
+    del {
+      margin-right: 6px;
+    }
+    ins {
+      color: red;
+    }
+  }
+}
+.mini-cart-actions {
+  flex: 1 1 auto;
+  margin-top: 10px;
+}
+
+.mini-cart-delete-btn,
+.mini-cart-edit-btn {
+  outline: none;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  @include transition(color 0.3s);
+  svg {
+    font-size: 2rem;
+  }
+  span {
+    white-space: nowrap;
+    background: #383838;
+    color: $whiteColor;
+    padding: 8px 10px;
+    position: absolute;
+    bottom: 140%;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include transform(translateY(40%));
+    @include transition(all 0.3s);
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 4%;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #383838;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    color: $hoverColor;
+  }
+  &:hover span {
+    visibility: visible;
+    opacity: 1;
+    @include transform(translateY(0%));
+  }
+}

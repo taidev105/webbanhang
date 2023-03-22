@@ -1,0 +1,26 @@
+@import '../../sassStyles/mixin.scss';
+.single-product-recommendations-section {
+  margin-top: 100px;
+}
+.sp-recommendations-content {
+  margin-bottom: 100px;
+  .sp-recommendations-content_title {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    h3 {
+      @include font-size-weight(2.5rem, 500);
+    }
+  }
+  .mini-product-item {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .sp-recommendations-content {
+    .mini-product-item {
+      margin: 0 5px;
+    }
+  }
+}

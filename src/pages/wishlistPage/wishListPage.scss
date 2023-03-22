@@ -1,0 +1,13 @@
+.product-view-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 40px 0;
+  .product-view {
+    padding: 0;
+  }
+}
+.shopping-cart--empty {
+  h4 {
+    text-align: center;
+  }
+}

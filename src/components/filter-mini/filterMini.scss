@@ -1,0 +1,31 @@
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/variables.scss';
+
+.filter-mini {
+  @include mini-close(left, -100%);
+  &.openned {
+    @include mini-open;
+  }
+  @include scroll-bar(2px);
+  overflow: auto;
+  width: 300px;
+}
+.filter-wrapper {
+  &.padding-0px {
+    padding-top: 0;
+  }
+  padding: 50px 10px 10px 10px;
+  overflow-y: auto;
+}
+.filter-mini-header-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #222;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  h3 {
+    color: $whiteColor;
+  }
+}

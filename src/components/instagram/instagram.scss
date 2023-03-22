@@ -1,0 +1,105 @@
+@import '../../sassStyles/variables.scss';
+@import '../../sassStyles/mixin.scss';
+@import '../../sassStyles/animations.scss';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+.insta-container {
+  .section-title-container {
+    margin-bottom: 30px;
+  }
+
+  .slick-slide {
+    position: relative;
+    .insta-content {
+      overflow: hidden;
+      outline: none;
+      .insta-img {
+        @include transition(transform 3s);
+        width: 100%;
+        padding-top: 100%;
+        @include background-img;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        text-decoration: none;
+        border-radius: 20px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: black;
+        color: $whiteColor;
+        border: 2px solid $whiteColor;
+        @include font-size-weight(1.4rem, 800);
+        @include transition(transform 0.3s);
+        &:hover {
+          cursor: pointer;
+          @include transform(scale(1.2));
+        }
+      }
+      &:hover .insta-img {
+        @include transform(scale(1.1));
+      }
+    }
+  }
+  &:hover .slick-slider {
+    .next-arrow,
+    .prev-arrow {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+//shipping
+.shipping-container {
+  .MuiGrid-root {
+    padding: 5px;
+  }
+}
+.shipping-content {
+  width: 100%;
+  display: flex;
+  margin-bottom: 14px;
+  .shipping-icon {
+    margin-right: 8px;
+    svg {
+      color: $lightLetterColor;
+      font-size: 3.5rem;
+      @include transform(translateY(-2px));
+    }
+  }
+  .shipping-info {
+    .shipping-title {
+      @include font-size-weight(1.5rem, 600);
+      color: $letterColor;
+      margin-bottom: 5px;
+    }
+    .shipping-content {
+      color: $lightLetterColor;
+      @include font-size-weight(1.4rem, 500);
+      line-height: 1.5;
+    }
+  }
+}
+@media (min-width: 900px) {
+  .insta-container {
+    .slick-slider {
+      .next-arrow,
+      .prev-arrow {
+        opacity: 0;
+        visibility: hidden;
+        width: 50px;
+        height: 50px;
+      }
+      .next-arrow {
+        right: 20px;
+      }
+      .prev-arrow {
+        left: 20px;
+      }
+    }
+  }
+}

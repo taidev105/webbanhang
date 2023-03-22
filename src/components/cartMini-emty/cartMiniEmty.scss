@@ -1,0 +1,30 @@
+@import '../../sassStyles/variables.scss';
+.empty-mini-cart {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    font-size: 4.5rem;
+    color: $lightLetterColor;
+  }
+  p {
+    color: $lightLetterColor;
+    font-size: 1.5rem;
+  }
+  .link-back-to-shop {
+    background-color: $hoverColor;
+    color: $whiteColor;
+    display: inline;
+    text-decoration: none;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 550;
+    padding: 10px 25px;
+    border-radius: 20px;
+    &:hover {
+      background-color: lighten($hoverColor, 5%);
+    }
+  }
+}

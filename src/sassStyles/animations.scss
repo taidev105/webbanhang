@@ -1,0 +1,46 @@
+@import './mixin.scss';
+
+@include keyframes(fadeIn) {
+  //scale bigger and blur
+  0% {
+    opacity: 1;
+    @include transform(scale(0));
+  }
+  100% {
+    @include transform(scale(180));
+    opacity: 0;
+  }
+}
+@include keyframes(lightScale) {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.2));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+@include keyframes(scale) {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(2));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+@include keyframes(shakeButton) {
+  0% {
+    @include transform(translateX(0));
+  }
+  50% {
+    @include transform(translateX(7px));
+  }
+  100% {
+    @include transform(translateX(-7px));
+  }
+}
